@@ -14,3 +14,15 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require jquery-1.11.1.min
+//= require app
+//= require plugins
+//= require ie-support/html5
+//= require ie-support/respond
+//= require min/app-min
+//= require min/plugins-min
+
+
+
+
+
