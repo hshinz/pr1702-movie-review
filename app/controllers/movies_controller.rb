@@ -5,6 +5,6 @@ class MoviesController < ApplicationController
 
   def show
     @movie = Movie.find_by id: params[:id]
-    redirect_to movies_path if @movie.nil?
+    redirect_to movies_path unless @movie
   end
 end
