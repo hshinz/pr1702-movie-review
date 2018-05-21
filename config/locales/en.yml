@@ -6,6 +6,7 @@ en:
       home: Home
       login: Login
       register: Register
+      logout: Logout
     footer:
       about: About Us
       copyright: Copyright 2014 Company name, All rights reserved
