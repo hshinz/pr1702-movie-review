@@ -6,6 +6,7 @@ en:
       browse_movies: Browse Movies
       login: Login
       register: Register
+      logout: Logout
     footer:
       about: About Us
       recent: Recent Review
