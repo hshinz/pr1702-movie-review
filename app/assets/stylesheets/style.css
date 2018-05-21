@@ -320,11 +320,11 @@ form textarea {
 
 .latest-movie {
   margin-bottom: 30px;
-  border-radius: 5px;
+  border-radius: 1px;
   overflow: hidden; }
   .latest-movie img {
-    max-width: 100%;
-    width: 100%;
+    max-width: auto;
+    width: auto;
     display: block;
     height: auto; }
 
