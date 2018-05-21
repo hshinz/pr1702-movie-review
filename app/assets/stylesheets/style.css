@@ -4,7 +4,7 @@
  * Email: info@themezy.com
  * URL: http://themezy.com
  */
-/*=========================================== 
+/*===========================================
  * Importing CSS Libraries
  *===========================================*/
 article,
@@ -1701,3 +1701,14 @@ ul.arrow {
       color: #ffaa3c; }
   .site-footer .colophon {
     padding-top: 30px; }
+
+#screenshots {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  text-align: left;
+  position: relative;
+}
+#playTrailer {
+  position: absolute;
+  height: 230px;
+  width: 350px;

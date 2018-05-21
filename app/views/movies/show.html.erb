@@ -12,7 +12,7 @@
             <div class="col-md-3">
               <figure class="movie-poster"><%= image_tag @movie.image %></figure>
             </div>
-            <div class="col-md-9">
+            <div class="col-md-5">
               <h2 class="movie-title"><%= @movie.name %></h2>
               <div class="movie-summary">
                 <p><%= truncate @movie.synopsis, length: Settings.movies.synopsis_short %>.</p>
@@ -28,6 +28,10 @@
                 <li><strong><%= t ".cast" %>: </strong><%= @movie.description.cast_name %></li>
               </ul>
             </div>
+          <div id="screenshots" class="col-md-4">
+            <h3><%= t ".trailer" %></h3>
+            <iframe id="playTrailer" src="https://www.youtube.com/embed/<%= @movie.trailer %>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen ></iframe>
+          </div>
           </div>
           <div class="entry-content">
             <p><%= @movie.synopsis %></p>
