@@ -1,0 +1,40 @@
+<div id="site-content">
+  <%= render "layouts/header" %>
+  <main class="main-content">
+    <div class="container">
+      <div class="page">
+        <div class="breadcrumbs">
+          <a href="index.html">Home</a>
+          <span>Movie Review</span>
+        </div>
+        <div class="filters">
+          <select name="#" id="#" placeholder="Choose Category">
+            <option value="#">Action</option>
+            <option value="#">Drama</option>
+            <option value="#">Fantasy</option>
+            <option value="#">Horror</option>
+            <option value="#">Adventure</option>
+          </select>
+          <select name="#" id="#">
+            <option value="#">2012</option>
+            <option value="#">2013</option>
+            <option value="#">2014</option>
+          </select>
+        </div>
+        <div class="movie-list">
+          <% @movies.each do |movie| %>
+            <div class="movie">
+              <div class="movie-poster"><%= image_tag movie.image %></div>
+              <div class="movie-title"><%= link_to movie.name %></div>
+              <p><%= movie.synopsis[0..100] %>...</p>
+            </div>
+          <% end %>
+        </div>
+        <div class="pagination">
+          <%= will_paginate @movies %>
+        </div>
+      </div>
+    </div>
+  </main>
+  <%= render "layouts/footer" %>
+</div>
