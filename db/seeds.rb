@@ -46,3 +46,5 @@ Movie.create!(name: "The Dark Knight",
   release_date: "1998-09-12",
   genre_id: 2,
   description_id: 2)
+Movie.update([2,3],
+  [{length: "01:00:00"},{length: "02:21:22"}] )

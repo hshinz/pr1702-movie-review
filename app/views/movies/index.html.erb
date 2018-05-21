@@ -25,7 +25,7 @@
           <% @movies.each do |movie| %>
             <div class="movie">
               <div class="movie-poster"><%= image_tag movie.image %></div>
-              <div class="movie-title"><%= link_to movie.name %></div>
+              <div class="movie-title"><%= link_to movie.name, movie %></div>
               <p><%= movie.synopsis[0..100] %>...</p>
             </div>
           <% end %>
