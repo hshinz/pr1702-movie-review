@@ -1,6 +1,6 @@
 class Movie < ApplicationRecord
   belongs_to :genre
-  has_many :descriptions
+  belongs_to :description, optional: true
   has_many :interactives
   has_many :comments
   has_many :reviews
@@ -9,5 +9,4 @@ class Movie < ApplicationRecord
   validates :synopsis, presence: true
   validates :release_date, presence: true
   validates :genre_id, presence: true
-  validates :description_id, presence: true
 end

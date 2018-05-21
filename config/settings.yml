@@ -1,3 +1,4 @@
 movies:
   page: 12
-  
+  synopsis_short: 200
+

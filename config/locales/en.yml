@@ -2,15 +2,27 @@ en:
   hello: "Hello world"
   layouts:
     header:
-      home: Home
       browse_movies: Browse Movies
+      home: Home
       login: Login
       register: Register
     footer:
       about: About Us
-      recent: Recent Review
+      copyright: Copyright 2014 Company name, All rights reserved
       help: Help Center
       join: Join Us
-      social: Social Media
       news: Newsletter
-      copyright: Copyright 2014 Company name, All rights reserved
+      recent: Recent Review
+      social: Social Media
+  movies:
+    show:
+      cast: "Cast"
+      director: "Director"
+      genre: "Genre"
+      home: "Home"
+      length: "Length"
+      movie_review: "Movie Review"
+      premiere: "Premiere"
+      rating: "Rating"
+
+

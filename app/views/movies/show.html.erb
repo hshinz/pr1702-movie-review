@@ -1,0 +1,39 @@
+<%= render "layouts/header" %>
+  <main class="main-content">
+    <div class="container">
+      <div class="page">
+        <div class="breadcrumbs">
+          <a><%= t ".home" %></a>
+          <%= link_to t(".movie_review"), movies_path %>
+          <span><%= @movie.name %></span>
+        </div>
+        <div class="content">
+          <div class="row">
+            <div class="col-md-3">
+              <figure class="movie-poster"><%= image_tag @movie.image %></figure>
+            </div>
+            <div class="col-md-9">
+              <h2 class="movie-title"><%= @movie.name %></h2>
+              <div class="movie-summary">
+                <p><%= truncate @movie.synopsis, length: Settings.movies.synopsis_short %>.</p>
+              </div>
+              <ul class="movie-meta">
+                <li><strong><%= t ".rating" %>: </strong>
+                  <div class="star-rating" title="Rated 4.00 out of 5"><span style="width:80%"><strong class="rating">4.00</strong> out of 5</span></div>
+                </li>
+                <li><strong><%= t ".genre" %>: </strong><%= @movie.genre.name %></li>
+                <li><strong><%= t ".premiere" %>: </strong><%= @movie.release_date %></li>
+                <li><strong><%= t ".length" %>: </strong><%= @movie.length %></li>
+                <li><strong><%= t ".director" %>: </strong><%= @movie.description.director_name %></li>
+                <li><strong><%= t ".cast" %>: </strong><%= @movie.description.cast_name %></li>
+              </ul>
+            </div>
+          </div>
+          <div class="entry-content">
+            <p><%= @movie.synopsis %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+<%= render "layouts/footer" %>
