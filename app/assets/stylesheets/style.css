@@ -1712,3 +1712,24 @@ ul.arrow {
   position: absolute;
   height: 230px;
   width: 350px;
+}
+.devise-form {
+  margin-top: 50px;
+  margin-left: 200px;
+}
+.review-properties {
+    font-size: 12px;
+    color: #717171;
+}
+#movie-reviews p {
+    color: #919191;
+    font-size: 13px;
+    line-height: 20px;
+    margin-top: 10px;
+}
+.review-new {
+  margin-top: 20px;
+}
+.line {
+    border-bottom: 1px solid #ccc;
+}

@@ -1,10 +1,9 @@
 <div id="site-content">
-  <%= render "layouts/header" %>
   <main class="main-content">
     <div class="container">
       <div class="page">
         <div class="breadcrumbs">
-          <a href="index.html">Home</a>
+          <%= link_to t(".home"), root_path %>
           <span>Movie Review</span>
         </div>
         <div class="filters">
@@ -36,5 +35,4 @@
       </div>
     </div>
   </main>
-  <%= render "layouts/footer" %>
 </div>

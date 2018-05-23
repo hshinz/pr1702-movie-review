@@ -25,6 +25,38 @@ en:
       movie_review: "Movie Review"
       premiere: "Premiere"
       rating: "Rating"
+      submit: "Submit"
+      comments: "Movie Comments"
+      review: "Movie Reviews"
+    trailer:
       trailer: "Trailer"
+  reviews:
+    create:
+      done: "Done!"
+      try_again: "Try again!"
+    reviews:
+      review_by: "Review by"
+    form_type:
+      review: "Add Review"
+  devise:
+    sessions:
+      new:
+        login: "Login"
+    registrations:
+      edit:
+        back: "Back"
+        cancel: "Cancel my account"
+        confirm: "Are you sure?"
+        edit: "Edit"
+        unhappy: "Unhappy?"
+        update: "Update"
+      new:
+        sign_up: "Sign up"
+    passwords:
+      new:
+        forgot: "Forgot your password?"
+        send: "Send me reset password instructions"
+      edit:
+        change_password: "Change your password"
 
 
