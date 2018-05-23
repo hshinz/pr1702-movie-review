@@ -23,6 +23,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'will_paginate', '3.1.6'
 gem 'carrierwave', '1.2.2'
 gem 'mini_magick', '4.7.0'
+gem 'ransack'
 
 
 # Use Capistrano for deployment

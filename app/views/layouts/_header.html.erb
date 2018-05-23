@@ -1,7 +1,7 @@
 <header class="site-header">
   <div class="container">
     <a href="index.html" id="branding">
-      <img src="images/logo.png" alt="" class="logo">
+      <%= image_tag "logo.png", class: "logo" %>
       <div class="logo-copy">
         <h1 class="site-title">Company Name</h1>
         <small class="site-description">Tagline goes here</small>
@@ -19,10 +19,9 @@
           <li class="menu-item"><%= link_to t(".register"), new_user_registration_path %></li>
         <% end %>
       </ul>
-      <form action="#" class="search-form">
-        <input type="text" placeholder="Search...">
-        <button><i class="fa fa-search"></i></button>
-      </form>
+      <div class="search-form">
+        <%= render "layouts/search" %>
+      </div>
     </div>
     <div class="mobile-navigation"></div>
   </div>
