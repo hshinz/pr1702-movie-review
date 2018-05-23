@@ -22,8 +22,3 @@
 //= require ie-support/respond
 //= require min/app-min
 //= require min/plugins-min
-
-
-
-
-

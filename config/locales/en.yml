@@ -16,6 +16,8 @@ en:
       recent: Recent Review
       social: Social Media
   movies:
+    index:
+      home: "Home"
     show:
       cast: "Cast"
       director: "Director"
@@ -38,6 +40,20 @@ en:
       review_by: "Review by"
     form_type:
       review: "Add Review"
+  comments:
+    create:
+      created: "Successfully created comment!"
+    update:
+      updated: "Successfully updated comment!"
+    destroy:
+      destroyed: "Successfully destroyed comment!"
+    form:
+      com_holder: "Enter an comment..."
+      comment: "Add comment"
+    comments:
+      comment_by: "Comment by"
+      edit: "Edit"
+      delete: "Delete"
   devise:
     sessions:
       new:

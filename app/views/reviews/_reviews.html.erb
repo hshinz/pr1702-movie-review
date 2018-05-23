@@ -1,9 +1,11 @@
 <% @movie_reviews.each do |review| %>
-  <div class="review-properties">
-    <p><%= t ".review_by" %>: <%= review.user.email %> 
-      | <%= review.created_at %></p>
+  <div class="list-reviews">
+    <div class="properties">
+      <p><%= t ".review_by" %>: <a class="email"><%= review.user.email %></a>
+        | <%= time_ago_in_words(review.created_at) %> ago</p>
+    </div>
     <h4><%= review.title %></h4>
     <p><%= review.content %></p>
+    <div class="line"></div>
   </div>
-  <div class="line"></div>
 <% end %>

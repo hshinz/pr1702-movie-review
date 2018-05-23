@@ -1,0 +1,7 @@
+<%= form_for [@movie, @comment] do |f| %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.hidden_field :movie_id, value: @movie.id %>
+
+  <p><%= f.text_area :content, placeholder: t(".com_holder"), class: "comment-area" %></p>
+  <p><%= f.submit t(".comment"), id: "add_comment" %></p>
+<% end %>

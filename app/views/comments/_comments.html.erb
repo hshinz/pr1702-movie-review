@@ -1,0 +1,15 @@
+<% @movie_comments.each do |comment| %>
+  <div class="list-comments">
+    <div class="properties">
+      <p><%= t ".comment_by" %>: <a class="email"><%= comment.user.email %></a> | <%= time_ago_in_words(comment.created_at) %> ago</p>
+    </div>
+    <% if user_signed_in? && current_user == comment.user %>
+      <p><%= comment.content %>
+      <%= link_to t(".edit"), edit_movie_comment_path(comment, movie_id: @movie.id), remote: true %> |
+      <%= link_to t(".delete"), movie_comment_path(comment, movie_id: @movie.id), method: "delete", data: {confirm: "Are you sure?"} %>
+      </p>
+    <% else %>
+      <p><%= comment.content %></p>
+    <% end %>
+  </div>
+<% end %>

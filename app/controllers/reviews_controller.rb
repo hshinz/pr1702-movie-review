@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
     @review = Review.new review_params
     if @review.save
       flash[:success] = t ".done"
-      redirect_to movies_path
+      redirect_to @review.movie
     else
       flash[:danger] = t ".try_again"
       render :new
