@@ -15,8 +15,8 @@
         <% if user_signed_in? %>
           <li class="menu-item"><%= link_to t(".logout"), destroy_user_session_path, method: :delete %></li>
         <% else %>
-          <li class="menu-item"><%= link_to t(".login"), sign_in_path %></li>
-          <li class="menu-item"><%= link_to t(".register"), sign_up_path %></li>
+          <li class="menu-item"><%= link_to t(".login"), new_user_session_path %></li>
+          <li class="menu-item"><%= link_to t(".register"), new_user_registration_path %></li>
         <% end %>
       </ul>
       <form action="#" class="search-form">

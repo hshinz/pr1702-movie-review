@@ -1,0 +1,9 @@
+<% @movie_reviews.each do |review| %>
+  <div class="review-properties">
+    <p><%= t ".review_by" %>: <%= review.user.email %> 
+      | <%= review.created_at %></p>
+    <h4><%= review.title %></h4>
+    <p><%= review.content %></p>
+  </div>
+  <div class="line"></div>
+<% end %>

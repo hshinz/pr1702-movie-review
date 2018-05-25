@@ -1,43 +1,53 @@
-<%= render "layouts/header" %>
-  <main class="main-content">
-    <div class="container">
-      <div class="page">
-        <div class="breadcrumbs">
-          <a><%= t ".home" %></a>
-          <%= link_to t(".movie_review"), movies_path %>
-          <span><%= @movie.name %></span>
+<main class="main-content">
+  <div class="container">
+    <div class="page">
+      <div class="breadcrumbs">
+        <a><%= t ".home" %></a>
+        <%= link_to t(".movie_review"), movies_path %>
+        <span><%= @movie.name %></span>
+      </div>
+      <div class="content">
+        <div class="row">
+          <div class="col-md-3">
+            <figure class="movie-poster"><%= image_tag @movie.image %></figure>
+          </div>
+          <div class="col-md-5">
+            <h2 class="movie-title"><%= @movie.name %></h2>
+            <div class="movie-summary">
+              <p><%= truncate @movie.synopsis, length: Settings.movies.synopsis_short %>.</p>
+            </div>
+            <ul class="movie-meta">
+              <%= render "properties" %>
+            </ul>
+          </div>
+        <div id="screenshots" class="col-md-4">
+          <%= render "trailer" %>
         </div>
-        <div class="content">
-          <div class="row">
-            <div class="col-md-3">
-              <figure class="movie-poster"><%= image_tag @movie.image %></figure>
-            </div>
-            <div class="col-md-5">
-              <h2 class="movie-title"><%= @movie.name %></h2>
-              <div class="movie-summary">
-                <p><%= truncate @movie.synopsis, length: Settings.movies.synopsis_short %>.</p>
+        </div>
+        <div class="entry-content">
+          <p><%= @movie.synopsis %></p>
+        </div>
+        <div class="row">
+          <div class="col-md-5">
+            <h2><%= t ".comments" %></h2>
+          </div>
+          <div class="col-md-7" id="movie-reviews">
+            <h2><%= t ".review" %></h2>
+            <% if current_user.try(:admin?) %>
+              <div class="review">
+                <%= render "reviews/reviews" %>
               </div>
-              <ul class="movie-meta">
-                <li><strong><%= t ".rating" %>: </strong>
-                  <div class="star-rating" title="Rated 4.00 out of 5"><span style="width:80%"><strong class="rating">4.00</strong> out of 5</span></div>
-                </li>
-                <li><strong><%= t ".genre" %>: </strong><%= @movie.genre.name %></li>
-                <li><strong><%= t ".premiere" %>: </strong><%= @movie.release_date %></li>
-                <li><strong><%= t ".length" %>: </strong><%= @movie.length %></li>
-                <li><strong><%= t ".director" %>: </strong><%= @movie.description.director_name %></li>
-                <li><strong><%= t ".cast" %>: </strong><%= @movie.description.cast_name %></li>
-              </ul>
-            </div>
-          <div id="screenshots" class="col-md-4">
-            <h3><%= t ".trailer" %></h3>
-            <iframe id="playTrailer" src="https://www.youtube.com/embed/<%= @movie.trailer %>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen ></iframe>
-          </div>
-          </div>
-          <div class="entry-content">
-            <p><%= @movie.synopsis %></p>
+              <div class="review-new">
+                <%= render "reviews/form_type" %>
+              </div>
+            <% else %>
+              <div class="review-new">
+                <%= render "reviews/reviews" %>
+              </div>
+            <% end %>
           </div>
         </div>
       </div>
     </div>
-  </main>
-<%= render "layouts/footer" %>
+  </div>
+</main>

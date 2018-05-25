@@ -1,0 +1,12 @@
+<%= form_for @review do |f| %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.hidden_field :movie_id, value: @movie.id %>
+  
+  <p><%= f.label :title %></p>
+  <p><%= f.text_field :title %></p>
+
+  <p><%= f.label :content %></p>
+  <p><%= f.cktext_area :content, rows: 5 %></p>
+
+  <p><%= f.submit t(".review") %></p>
+<% end %>
