@@ -1,5 +1,4 @@
 en:
-  hello: "Hello world"
   layouts:
     header:
       account: "Account"
@@ -9,6 +8,12 @@ en:
       logout: "Logout"
       profile: "Profile"
       register: "Register"
+      manage: Movies Management
+      browse_movies: Browse Movies
+      home: Home
+      login: Login
+      register: Register
+      logout: Logout
     footer:
       about: "About Us"
       copyright: "Copyright 2014 Company name, All rights reserved"
@@ -91,3 +96,56 @@ en:
       link: "Quick links"
       more: "See more"
       reviews: "Your Reviews"
+  admin:
+    movies:
+      index:
+        list: Movies list
+      new:
+        add: Add new movie
+        sub: Submit
+        cancel: Cancel
+      movie:
+        all: All movies
+        add: Add new movie
+        id: Movie id
+        image: Movie image
+        title: Title
+        trailer: Trailer
+        genre: Genre
+        rd: Release Date
+        syn: Synopsis
+        des: Description
+    genres:
+      index:
+        list: Genres list
+      new:
+        add: Add new genre
+        sub: Submit
+        cancel: Cancel
+      genre:
+        all: All genres
+        add: Add genre
+        name: Genre name
+        pr: Parent ID
+    descriptions:
+      index:
+        list: Descriptions list
+      new:
+        add: Add new description
+        sub: Submit
+        cancel: Cancel
+      description:
+        all: All descriptions
+        add: Add new description
+        did: Description ID
+        dname: Director name
+        cname: Cast Name
+    users:
+      index:
+        list: User list
+      user:
+        all: All users
+        email: User email
+        ca: Created at
+        role: Role
+

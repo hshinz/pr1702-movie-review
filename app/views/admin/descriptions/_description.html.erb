@@ -1,0 +1,22 @@
+<h2><%= t ".all" %></h2>
+<table class="table table-hover">
+  <%= link_to t(".add"), {action: "new"}, class: "add-book btn btn-primary" %>
+  <thead class="table-title">
+    <tr>
+      <th><%= t ".did" %></th>
+      <th><%= t ".dname" %></th>
+      <th><%= t ".cname" %></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @descriptions.each do |description| %>
+      <tr>
+        <td><%= description.id %></td>
+        <td><%= description.director_name %></td>
+        <td><%= description.cast_name %></td>
+        <td><%= link_to "Delete", [:admin, description], method: :delete, data: {confirm: "Are you sure?"} %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,28 @@
+<div class="container-fluid" id="management">
+    <div class="dashboard col-sm-9">
+      <div class="well">
+        <%= form_for [:admin, @movie] do |f| %>
+          <h2><%= t ".add" %></h2>
+
+          <p><%= f.label :name %>
+          <%= f.text_field :name, class: "form-control" %></p>
+          <p><%= f.label :image_url %>
+          <%= f.text_field :image, class: "form-control" %></p>
+          <p><%= f.label :trailer %>
+          <%= f.text_field :trailer, class: "form-control" %></p>
+          <p><%= f.label :synopsis %>
+          <%= f.text_area :synopsis, class: "form-control" %></p>
+          <p><%= f.label :release_date %>
+          <%= f.date_field :release_date, class: "form-control" %></p>
+
+          <p><%= f.label :genre %>
+          <%= f.collection_select :genre_id, Genre.all, :id, :name %></p>
+          <p><%= f.label :description %>
+          <%= f.text_field :description_id %></p>
+
+          <%= f.submit t(".sub"), class: "btn btn-primary" %>
+          <%= link_to t(".cancel"), admin_movies_path, class: "btn btn-danger" %>
+        <% end %>
+      </div>
+    </div>
+</div>

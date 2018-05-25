@@ -1,0 +1,19 @@
+<div class="container-fluid" id="management">
+    <div class="dashboard col-sm-9">
+      <div class="well">
+        <%= form_for [:admin, @genre] do |f| %>
+          <h2><%= t ".add" %></h2>
+          <p>
+            <%= f.label :name %>
+            <%= f.text_field :name, class: "form-control" %>
+          </p>
+          <p>
+            <%= f.label :parent_id %>
+            <%= f.text_field :parent_id %>
+          </p>
+          <%= f.submit t(".sub"), class: "btn btn-primary" %>
+          <%= link_to t(".cancel"), admin_genres_path, class: "btn btn-danger" %>
+        <% end %>
+      </div>
+    </div>
+</div>
