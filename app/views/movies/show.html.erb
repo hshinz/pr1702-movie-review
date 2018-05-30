@@ -28,9 +28,18 @@
           <p><%= @movie.synopsis %></p>
         </div>
         <div class="row">
-          <div class="col-md-5">
+          <div class="col-md-5" id="movie-comments">
             <h2><%= t ".comments" %></h2>
+            <div class="movie-comment">
+              <% if user_signed_in? %>
+                <%= render partial: "comments/comments" %>
+                <%= render partial: "comments/form" %>
+              <% else %>
+                <%= render partial: "comments/comments" %>
+              <% end %>
+            </div>
           </div>
+
           <div class="col-md-7" id="movie-reviews">
             <h2><%= t ".review" %></h2>
             <% if current_user.try(:admin?) %>
@@ -41,7 +50,7 @@
                 <%= render "reviews/form_type" %>
               </div>
             <% else %>
-              <div class="review-new">
+              <div class="review">
                 <%= render "reviews/reviews" %>
               </div>
             <% end %>
