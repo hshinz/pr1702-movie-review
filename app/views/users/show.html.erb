@@ -1,0 +1,9 @@
+<%= provide :title, "User Detail" %>
+<div class="container">
+  <div class="row" id="show_user" >
+    <li><%= @user.email %></li>
+    <li><%= @user.role %></li>
+    <p>Comments: <%= @user.comments.count %></p>
+    <p>Reviews: <%= @user.reviews.count %></p>
+    </div>
+</div>
