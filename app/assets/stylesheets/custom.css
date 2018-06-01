@@ -1,0 +1,61 @@
+#screenshots {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  text-align: left;
+  position: relative;
+}
+#playTrailer {
+  position: absolute;
+  height: 230px;
+  width: 350px;
+}
+.devise-form {
+  margin-top: 50px;
+  margin-left: 200px;
+}
+.review-properties {
+    font-size: 12px;
+    color: #717171;
+}
+#movie-comments {
+  color: #919191;
+  font-size: 13px;
+  line-height: 20px;
+  margin-top: 10px;
+}
+
+#movie-comments .properties p {
+  font-style: italic;
+}
+
+#movie-comments .properties .email {
+  color: #e8b24d;
+}
+
+.comment-area {
+  width: 90%;
+}
+
+#movie-reviews p {
+  color: #919191;
+  font-size: 13px;
+  line-height: 20px;
+  margin-top: 10px;
+}
+
+#movie-reviews .properties p {
+  font-style: italic;
+}
+
+#movie-reviews .properties .email {
+  color: #e8b24d;
+}
+
+.review-new {
+  margin-top: 20px;
+}
+
+.line {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+}
