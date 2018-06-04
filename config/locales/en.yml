@@ -17,7 +17,11 @@ en:
       social: Social Media
   movies:
     index:
+      browse_movies: "Browse Movies"
+      filter: "Movie Filter"
+      genres: "All Genres"
       home: "Home"
+      years: "Years"
     show:
       cast: "Cast"
       director: "Director"

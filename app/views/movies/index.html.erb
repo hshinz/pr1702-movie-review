@@ -4,21 +4,14 @@
       <div class="page">
         <div class="breadcrumbs">
           <%= link_to t(".home"), root_path %>
-          <span>Movie Review</span>
+          <span><%= t ".browse_movies" %></span>
         </div>
         <div class="filters">
-          <select name="#" id="#" placeholder="Choose Category">
-            <option value="#">Action</option>
-            <option value="#">Drama</option>
-            <option value="#">Fantasy</option>
-            <option value="#">Horror</option>
-            <option value="#">Adventure</option>
-          </select>
-          <select name="#" id="#">
-            <option value="#">2012</option>
-            <option value="#">2013</option>
-            <option value="#">2014</option>
-          </select>
+          <%= form_tag movies_path, method: "get" do %>
+            <%= select_tag "genre", options_for_select(@genres), prompt: t(".genres") %>
+            <%= select_tag "year", options_for_select(@years), prompt: t(".years") %>
+            <%= submit_tag t(".filter") %>
+          <% end %>
         </div>
         <div class="movie-list">
           <% @movies.each do |movie| %>
