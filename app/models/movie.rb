@@ -4,7 +4,7 @@ class Movie < ApplicationRecord
   has_many :interactives
   has_many :comments
   has_many :reviews
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
   validates :image, presence: true
   validates :synopsis, presence: true
   validates :release_date, presence: true
@@ -14,5 +14,5 @@ class Movie < ApplicationRecord
 
   scope :genre, -> (genre_id) {where(genre_id: genre_id).order(created_at: :desc)}
 
-  scope :release_year, -> (year) {(where "YEAR(release_date) = ?", year).order(created_at: :desc)}
+  scope :release_year, -> (year) {(where "YEAR(release_date) = ?", year.to_i).order(created_at: :desc)}
 end

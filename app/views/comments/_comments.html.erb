@@ -1,7 +1,7 @@
 <% @movie_comments.each do |comment| %>
   <div class="list-comments">
     <div class="properties">
-      <p><%= t ".comment_by" %>: <a class="email"><%= comment.user.email %></a> | <%= time_ago_in_words(comment.created_at) %> ago</p>
+      <em><%= t ".comment_by" %>: <%= comment.user.email %></a> (<%= time_ago_in_words(comment.created_at) %> ago)</em>
     </div>
     <% if user_signed_in? && current_user == comment.user %>
       <p><%= comment.content %>

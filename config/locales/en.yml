@@ -23,6 +23,7 @@ en:
       home: "Home"
       years: "Years"
     show:
+      new_review: "Write Review"
       cast: "Cast"
       director: "Director"
       genre: "Genre"
@@ -32,14 +33,14 @@ en:
       premiere: "Premiere"
       rating: "Rating"
       submit: "Submit"
-      comments: "Movie Comments"
-      review: "Movie Reviews"
+      comments: "User Comments"
+      review: "User Reviews"
     trailer:
       trailer: "Trailer"
   reviews:
     create:
-      done: "Done!"
-      try_again: "Try again!"
+      success: "Successfully created review!"
+      try_again: "Oop! Try again!"
     reviews:
       review_by: "Review by"
     form_type:
@@ -78,5 +79,3 @@ en:
         send: "Send me reset password instructions"
       edit:
         change_password: "Change your password"
-
-
