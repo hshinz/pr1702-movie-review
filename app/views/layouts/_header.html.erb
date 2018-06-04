@@ -1,12 +1,12 @@
 <header class="site-header">
   <div class="container">
-    <a href="index.html" id="branding">
+    <%= link_to root_path, id: "branding" do %>
       <%= image_tag "logo.png", class: "logo" %>
       <div class="logo-copy">
         <h1 class="site-title">Company Name</h1>
         <small class="site-description">Tagline goes here</small>
       </div>
-    </a>
+    <% end %>
     <div class="main-navigation">
       <button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
       <ul class="menu">

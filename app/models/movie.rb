@@ -9,4 +9,10 @@ class Movie < ApplicationRecord
   validates :synopsis, presence: true
   validates :release_date, presence: true
   validates :genre_id, presence: true
+
+  scope :load_year, ->{select("release_date").map{ |i| i.release_date.year }.uniq}
+
+  scope :genre, -> (genre_id) {where(genre_id: genre_id).order(created_at: :desc)}
+
+  scope :release_year, -> (year) {(where "YEAR(release_date) = ?", year).order(created_at: :desc)}
 end
