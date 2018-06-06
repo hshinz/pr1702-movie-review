@@ -24,6 +24,7 @@ gem 'will_paginate', '3.1.6'
 gem 'carrierwave', '1.2.2'
 gem 'mini_magick', '4.7.0'
 gem 'ransack'
+gem 'bootstrap-sass', '~> 3.3'
 
 
 # Use Capistrano for deployment

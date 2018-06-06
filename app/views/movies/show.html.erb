@@ -39,15 +39,13 @@
               <% end %>
             </div>
           </div>
-          <div class="col-md-7" id="movie-reviews">
+          <div class="col-md-7">
             <h2><%= t ".review" %></h2>
-            <% if current_user.try(:admin?) %>
+            <% if user_signed_in? %>
               <div class="review">
                 <%= render "reviews/reviews" %>
               </div>
-              <div class="review-new">
-                <%= render "reviews/form_type" %>
-              </div>
+              <%= link_to t(".new_review"), new_movie_review_path(@movie), class: "btn btn-success" %>
             <% else %>
               <div class="review">
                 <%= render "reviews/reviews" %>

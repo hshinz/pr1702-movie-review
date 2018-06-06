@@ -412,7 +412,7 @@ ul.arrow {
         color: #ffaa3c; }
 
 /* Star rating style */
-.star-rating {
+/*.star-rating {
   display: inline-block;
   overflow: hidden;
   position: relative;
@@ -444,7 +444,7 @@ ul.arrow {
   top: 0;
   position: absolute;
   left: 0;
-  color: #ffaa3c; }
+  color: #ffaa3c; }*/
 
 .feature {
   margin-bottom: 30px; }

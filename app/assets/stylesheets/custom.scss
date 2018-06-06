@@ -1,3 +1,8 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+$gray-medium-light: #eaeaea;
+
 #screenshots {
   margin-top: 10px;
   margin-bottom: 30px;
@@ -18,37 +23,27 @@
     color: #717171;
 }
 #movie-comments {
-  color: #919191;
-  font-size: 13px;
+  font-size: 15px;
   line-height: 20px;
-  margin-top: 10px;
 }
 
-#movie-comments .properties p {
-  font-style: italic;
-}
-
-#movie-comments .properties .email {
-  color: #e8b24d;
+#movie-comments .properties em {
+  color: darkgray;
 }
 
 .comment-area {
   width: 90%;
 }
 
-#movie-reviews p {
-  color: #919191;
-  font-size: 13px;
+.properties p {
+  font-size: 15px;
   line-height: 20px;
   margin-top: 10px;
 }
 
-#movie-reviews .properties p {
-  font-style: italic;
-}
-
-#movie-reviews .properties .email {
-  color: #e8b24d;
+.review .properties em {
+  padding: 0 50px;
+  color: darkgray;
 }
 
 .review-new {
@@ -62,4 +57,23 @@
 
 .search-form {
   margin-right: 10px;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+
+.star-rating {
+  display: inline-block;
 }
