@@ -2,19 +2,21 @@ en:
   hello: "Hello world"
   layouts:
     header:
-      browse_movies: Browse Movies
-      home: Home
-      login: Login
-      register: Register
-      logout: Logout
+      account: "Account"
+      browse_movies: "Browse Movies"
+      home: "Home"
+      login: "Login"
+      logout: "Logout"
+      profile: "Profile"
+      register: "Register"
     footer:
-      about: About Us
-      copyright: Copyright 2014 Company name, All rights reserved
-      help: Help Center
-      join: Join Us
-      news: Newsletter
-      recent: Recent Review
-      social: Social Media
+      about: "About Us"
+      copyright: "Copyright 2014 Company name, All rights reserved"
+      help: "Help Center"
+      join: "Join Us"
+      news: "Newsletter"
+      recent: "Recent Review"
+      social: "Social Media"
   movies:
     index:
       browse_movies: "Browse Movies"
@@ -33,7 +35,6 @@ en:
       premiere: "Premiere"
       rating: "Rating"
       submit: "Submit"
-      comments: "User Comments"
       review: "User Reviews"
     trailer:
       trailer: "Trailer"
@@ -79,3 +80,12 @@ en:
         send: "Send me reset password instructions"
       edit:
         change_password: "Change your password"
+  users:
+    show:
+      avatar: "Avatar"
+      bookmark: "Your Bookmarks"
+      comments: "Your Comments"
+      description: "Edit Description"
+      link: "Quick links"
+      more: "See more"
+      reviews: "Your Reviews"
