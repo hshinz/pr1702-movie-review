@@ -1,4 +1,6 @@
 movies:
   page: 12
   synopsis_short: 200
+users:
+  page: 2
 
