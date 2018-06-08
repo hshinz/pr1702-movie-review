@@ -25,17 +25,19 @@ en:
       home: "Home"
       years: "Years"
     show:
-      new_review: "Write Review"
-      cast: "Cast"
-      director: "Director"
-      genre: "Genre"
       home: "Home"
-      length: "Length"
       movie_review: "Movie Review"
-      premiere: "Premiere"
-      rating: "Rating"
-      submit: "Submit"
+      new_review: "Write Review"
       review: "User Reviews"
+      submit: "Submit"
+    properties:
+       cast: "Cast"
+       director: "Director"
+       genre: "Genre"
+       length: "Length"
+       premiere: "Premiere"
+       rating: "Rating"
+       share: "Share this movie:"
     trailer:
       trailer: "Trailer"
   reviews:

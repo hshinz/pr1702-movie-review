@@ -22,4 +22,5 @@
 //= require "js/min/app-min"
 //= require "js/min/plugins-min"
 //= require ckeditor/init
+//= require social-share-button
 //= require_tree .
