@@ -11,3 +11,5 @@
 <li><strong><%= t ".director" %>: </strong><%= @movie.description.director_name %></li>
 
 <li><strong><%= t ".cast" %>: </strong><%= @movie.description.cast_name %></li>
+
+<li><em><%= t ".share" %></em><%= social_share_button_tag @movie.name %></li>
