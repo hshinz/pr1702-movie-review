@@ -3,4 +3,6 @@ movies:
   synopsis_short: 200
 users:
   page: 2
+reivews:
+  cont_length: 500
 

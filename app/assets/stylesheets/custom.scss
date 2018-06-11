@@ -111,3 +111,36 @@ tr:hover {background-color: #f5f5f5;}
 .add-movie {
   float: right;
 }
+
+ul.test {
+  white-space: nowrap;
+}
+
+li.test {
+  display:inline;
+}
+
+.stats {
+  display: inline-block;
+  .fa {
+    color: orange;
+  }
+}
+
+.like_review {
+  color: #337ab7;
+  font-size: 12px;
+  display: inline-flex;
+  .fa {
+    background-color: tan;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  p {
+    font-size: 12px;
+  }
+}
+
+.new_review {
+  margin-bottom: 10px;
+}

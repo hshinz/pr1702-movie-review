@@ -51,6 +51,8 @@ en:
       try_again: "Oop! Try again!"
     reviews:
       review_by: "Review by"
+      like: "Was this review helpful to you?"
+      yes_button: "YES"
     form_type:
       review: "Add Review"
   comments:

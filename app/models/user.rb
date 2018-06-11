@@ -4,8 +4,13 @@ class User < ApplicationRecord
   has_many :interactives
   has_many :comments
   has_many :reviews
+  has_many :like_reviews, dependent: :destroy
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
   enum role: [:user, :admin]
+
+  def has_review? review
+    like_reviews.find_by review: review
+  end
 end
