@@ -1,0 +1,21 @@
+<h2><%= t ".all" %></h2>
+<table class="table table-hover">
+  <thead class="table-title">
+    <tr>
+      <th><%= t ".email" %></th>
+      <th><%= t ".ca" %></th>
+      <th><%= t ".role" %></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.email %></td>
+        <td><%= user.created_at %></td>
+        <td><%= user.role %>
+        <td><%= link_to "Delete", [:admin, user], method: :delete, data: {confirm: "Are you sure?"} %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

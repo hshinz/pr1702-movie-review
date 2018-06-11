@@ -1,0 +1,19 @@
+<div class="container-fluid" id="management">
+    <div class="dashboard col-sm-9">
+      <div class="well">
+        <%= form_for [:admin, @description] do |f| %>
+          <h2><%= t ".add" %></h2>
+          <p>
+            <%= f.label :director_name %>
+            <%= f.text_field :director_name, class: "form-control", placeholder: "Input your director name" %>
+          </p>
+          <p>
+            <%= f.label :cast_name %>
+            <%= f.text_field :cast_name, class: "form-control", placeholder: "Input your cast name" %>
+          </p>
+          <%= f.submit t(".sub"), class: "btn btn-primary" %>
+          <%= link_to t(".cancel"), admin_descriptions_path, class: "btn btn-danger" %>
+        <% end %>
+      </div>
+    </div>
+</div>

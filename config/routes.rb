@@ -7,4 +7,15 @@ Rails.application.routes.draw do
     resources :comments
     resources :reviews
   end
+  resources :movies
+  resources :reviews
+  namespace :admin do
+    resources :users
+    resources :movies
+    resources :reviews
+    resources :comments
+    resources :genres
+    resources :descriptions
+  end
+
 end
