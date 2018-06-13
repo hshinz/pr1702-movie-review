@@ -1,7 +1,8 @@
 class Admin::MoviesController < ApplicationController
   before_action :set_movie
   before_action :load_genre, :load_release_year, only: :index
-  before_action :admin_only, only: [:new, :create, :edit, :update, :destroy]
+  before_action :admin_only
+
   def index
     @movies = Movie.all
     filtering_params(params).each do |key, value|
@@ -25,7 +26,7 @@ class Admin::MoviesController < ApplicationController
   def create
     @movie = Movie.new movie_params
     if @movie.save
-      flash[:success] = "Movie created"
+      flash[:success] = t(".create_success")
       redirect_to admin_movies_path
     else
       render :new
@@ -37,18 +38,21 @@ class Admin::MoviesController < ApplicationController
 
   def update
     if @movie.update(movie_params)
-      flash[:success] = 'Update movie detail successful'
+      flash[:success] = t('.update_success')
       redirect_to admin_movies_path
     else
+      flash[:alert] = t(".update_failed")
       render :edit
     end
   end
 
   def destroy
-    @movie = Movie.find_by id: params[:id]
-    @movie.destroy
-    flash[:success] = "Movie deleted"
-    redirect_to admin_movies_path
+    if @movie.destroy
+      flash[:success] = t(".delete_success")
+      redirect_to admin_movies_path
+    else
+      flash[:error] = t(".delete_failed")
+    end
   end
 
 private

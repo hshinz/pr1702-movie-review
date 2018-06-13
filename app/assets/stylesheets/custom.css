@@ -82,12 +82,6 @@ $gray-medium-light: #eaeaea;
   display: inline-block;
 }
 
-.sidenav {
-  background-color: $gray;
-  height: 100%;
-  width: 15%;
-}
-
 /* admin */
 .management {
   margin-top: 100px;
@@ -115,14 +109,6 @@ tr:hover {background-color: #f5f5f5;}
 
 .add-movie {
   float: right;
-}
-
-ul.test {
-  white-space: nowrap;
-}
-
-li.test {
-  display:inline;
 }
 
 .stats {
