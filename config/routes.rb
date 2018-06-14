@@ -4,11 +4,8 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users
   resources :movies do
-    resources :comments
     resources :reviews
   end
-  resources :movies
-  resources :reviews
   namespace :admin do
     resources :users
     resources :movies
@@ -17,5 +14,5 @@ Rails.application.routes.draw do
     resources :genres
     resources :descriptions
   end
-
+  resources :like_reviews, only: :create
 end

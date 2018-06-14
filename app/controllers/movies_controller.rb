@@ -11,10 +11,10 @@ class MoviesController < ApplicationController
   end
 
   def show
-    @reviews = Review.where(movie_id: @movie.id).order(created_at: :desc)
-    @reviews.blank? ? 0 : @avg_rating = @reviews.average(:rating).round(2)
-    @movie_comments = @movie.comments.order(created_at: :desc)
-    @comment = Comment.new
+    reviews = @movie.reviews
+    reviews.blank? ? 0 : @avg_rating = reviews.average(:rating).round(2)
+    @reviews = reviews.sort_reviews
+    @like = LikeReview.new
   end
 
 private
