@@ -1,8 +1,7 @@
 class StaticPageController < ApplicationController
   def home
-    @movies = Movie.paginate page: params[:page], per_page: Settings.movies.page
-
-    @q = Movie.ransack(params[:q])
-    @movies_search = @q.result(distinct: :true)
+    @newest = Movie.top_updated.first Settings.movies.limit
+    @new_reviewes = Movie.top_reviewed.first Settings.movies.limit
+    @top_rated = Movie.top_rated.first Settings.movies.limit
   end
 end

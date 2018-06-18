@@ -1,0 +1,4 @@
+<div class="movie" >
+  <div class="movie-poster"><%= link_to image_tag(movie.image), movie %></div>
+  <div class="movie-title"><%= truncate movie.name, length: Settings.movies.name_length %></div>
+</div>

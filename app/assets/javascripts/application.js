@@ -10,17 +10,13 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require turbolinks
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require turbolinks
-//= require "js/app"
-//= require "js/plugins"
 //= require "js/jquery-1.11.1.min"
-//= require "js/ie-support/html5"
-//= require "js/ie-support/respond"
-//= require "js/min/app-min"
-//= require "js/min/plugins-min"
+//= require "js/plugins"
+//= require "js/app"
 //= require ckeditor/init
 //= require social-share-button
 //= require_tree .

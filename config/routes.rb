@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users
   resources :movies do
+    collection do
+      get :top
+    end
     resources :reviews
   end
   namespace :admin do

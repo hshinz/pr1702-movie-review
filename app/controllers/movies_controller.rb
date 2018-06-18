@@ -1,6 +1,7 @@
 class MoviesController < ApplicationController
   before_action :set_movie
   before_action :load_genre, :load_release_year, :load_ratings, only: :index
+  
   def index
     @movies = Movie.all
     filtering_params(params).each do |key, value|
@@ -8,6 +9,11 @@ class MoviesController < ApplicationController
     end
 
     @movies = @movies.paginate page: params[:page], per_page: Settings.movies.page
+  end
+
+  def top
+    @top_movies = Movie.top_by params[:type]
+    @top_movies = @top_movies.paginate page: params[:page], per_page: Settings.movies.page
   end
 
   def show
