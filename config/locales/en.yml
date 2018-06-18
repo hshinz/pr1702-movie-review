@@ -29,6 +29,7 @@ en:
       genres: "All Genres"
       home: "Home"
       years: "Years"
+      rating: "Ratings"
     show:
       home: "Home"
       movie_review: "Movie Review"

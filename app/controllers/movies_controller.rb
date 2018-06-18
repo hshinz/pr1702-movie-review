@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
   before_action :set_movie
-  before_action :load_genre, :load_release_year, only: :index
+  before_action :load_genre, :load_release_year, :load_ratings, only: :index
   def index
     @movies = Movie.all
     filtering_params(params).each do |key, value|
@@ -23,12 +23,16 @@ private
     params.require(:movie).permit :name, :image, :trailer, :synopsis, :release_date, :genre_id, :description_id
   end
 
+  def filtering_params params
+    params.permit :genre, :release_year, :user_rating
+  end
+
   def set_movie
     @movie = Movie.find_by id: params[:id]
   end
 
-  def filtering_params params
-    params.permit :genre, :release_year
+  def load_ratings
+    @ratings = Review.pluck(:rating).uniq.sort
   end
 
   def load_genre
