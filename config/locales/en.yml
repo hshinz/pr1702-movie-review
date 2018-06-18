@@ -45,6 +45,8 @@ en:
        share: "Share this movie:"
     trailer:
       trailer: "Trailer"
+    add_to_watchlist:
+      add_watchlist: "Add to watchlist"
   reviews:
     create:
       success: "Successfully created review!"
@@ -150,4 +152,8 @@ en:
         email: User email
         ca: Created at
         role: Role
+  watchlists:
+    create:
+      added: "Added to watchlist"
+      failed: "Failed!"
 

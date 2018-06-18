@@ -12,6 +12,13 @@
             <figure class="movie-poster"><%= image_tag @movie.image %></figure>
           </div>
           <div class="col-md-5">
+            <% if user_signed_in? %>
+              <% unless current_user.has_watchlist?(@movie) %>
+                <div class="add_watchlist">
+                  <%= render "add_to_watchlist" %>
+                </div>
+              <% end %>
+            <% end %>
             <h2 class="movie-title"><%= @movie.name %></h2>
             <div class="movie-summary">
               <p><%= truncate @movie.synopsis, length: Settings.movies.synopsis_short %>.</p>
@@ -31,7 +38,7 @@
           <h2><%= t ".review" %></h2>
           <% if user_signed_in? %>
             <div class="new_review">
-              <%= link_to t(".new_review"), new_movie_review_path(@movie), class: "btn btn-success" %>
+              <%= link_to t(".new_review"), new_movie_review_path(@movie), class: "btn-sm btn-primary" %>
             </div>
             <div class="col-md-12 well">
               <div class="review">
