@@ -11,6 +11,10 @@ class User < ApplicationRecord
 
   enum role: [:user, :admin]
 
+  def has_movie? movie 
+    reviews.find_by movie: movie
+  end
+
   def has_review? review
     like_reviews.find_by review: review
   end

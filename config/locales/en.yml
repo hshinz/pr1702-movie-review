@@ -51,6 +51,9 @@ en:
       trailer: "Trailer"
     add_to_watchlist:
       add_watchlist: "Add to watchlist"
+    reviews:
+      ask: "Was this review helpful to you?"
+      yes_btn: "YES"
   reviews:
     create:
       success: "Successfully created review!"
@@ -166,4 +169,8 @@ en:
       newest: "Newest"
       see_all: "See all"
       top_rated: "Top Rated"
+  like_reviews:
+    create:
+      success: "Liked success!"
+      failed: "Failed"
 

@@ -1,59 +1,54 @@
-<main class="main-content">
-  <div class="container">
-    <div class="page">
-      <div class="breadcrumbs">
-        <a><%= t ".home" %></a>
-        <%= link_to t(".movie_review"), movies_path %>
-        <span><%= @movie.name %></span>
-      </div>
-      <div class="content">
-        <div class="row">
-          <div class="col-md-3">
-            <figure class="movie-poster"><%= image_tag @movie.image %></figure>
+<div class="breadcrumbs">
+  <a><%= t ".home" %></a>
+  <%= link_to t(".movie_review"), movies_path %>
+  <span><%= @movie.name %></span>
+</div>
+<div class="content">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="movie-poster"><%= image_tag @movie.image, class: "thumbnail" %></div>
+    </div>
+    <div class="col-md-5">
+      <% if user_signed_in? %>
+        <% unless current_user.has_watchlist?(@movie) %>
+          <div class="add_watchlist">
+            <%= render "add_to_watchlist" %>
           </div>
-          <div class="col-md-5">
-            <% if user_signed_in? %>
-              <% unless current_user.has_watchlist?(@movie) %>
-                <div class="add_watchlist">
-                  <%= render "add_to_watchlist" %>
-                </div>
-              <% end %>
-            <% end %>
-            <h2 class="movie-title"><%= @movie.name %></h2>
-            <div class="movie-summary">
-              <p><%= truncate @movie.synopsis, length: Settings.movies.synopsis_short %>.</p>
-            </div>
-            <ul class="movie-meta">
-              <%= render "properties" %>
-            </ul>
-          </div>
-        <div id="screenshots" class="col-md-4">
-          <%= render "trailer" %>
-        </div>
-        </div>
-        <div class="entry-content">
-          <p><%= @movie.synopsis %></p>
-        </div>
-        <div class="row">
-          <h2><%= t ".review" %></h2>
-          <% if user_signed_in? %>
-            <div class="new_review">
-              <%= link_to t(".new_review"), new_movie_review_path(@movie), class: "btn-sm btn-primary" %>
-            </div>
-            <div class="col-md-12 well">
-              <div class="review">
-                <%= render "reviews/reviews" %>
-              </div>
-            </div>
-          <% else %>
-            <div class="col-md-12 well">
-              <div class="review">
-                <%= render "reviews/reviews" %>
-              </div>
-            </div>
-          <% end %>
-        </div>
+        <% end %>
+      <% end %>
+      <h2 class="movie-title"><%= @movie.name %></h2>
+      <div class="movie-summary">
+        <p><%= truncate @movie.synopsis, length: Settings.movies.synopsis_short %></p>
       </div>
+      <ul class="movie-meta">
+        <%= render "properties" %>
+      </ul>
+    </div>
+  <div class="col-md-4">
+    <div class="screenshots" >
+      <%= render "trailer" %>
     </div>
   </div>
-</main>
+  </div>
+  <div class="entry-content">
+    <p><%= @movie.synopsis %></p>
+  </div>
+
+  <div class="wire-review-btn">
+    <% if user_signed_in? %>
+      <% unless current_user.has_movie?(@movie) %>
+        <span class="glyphicon glyphicon-pencil"></span>
+        <%= link_to t(".new_review"), new_movie_review_path(@movie), class: "btn-sm btn-primary" %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-8 col-md-12">
+      <% if @movie.reviews.any? %>
+        <h2><%= t ".user_review" %><%= " (#{@movie.count_reviews})" %></h2>
+        <%= render "reviews" %>
+      <% end %>
+    </div>
+  </div>
+</div>
