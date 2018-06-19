@@ -3,8 +3,8 @@
     <%= link_to root_path, id: "branding" do %>
       <%= image_tag "logo.png", class: "logo" %>
       <div class="logo-copy">
-        <h1 class="site-title">Company Name</h1>
-        <small class="site-description">Tagline goes here</small>
+        <h1 class="site-title"><%= t ".title" %></h1>
+        <small class="site-description"><%= t ".description" %></small>
       </div>
     <% end %>
     <div class="main-navigation">

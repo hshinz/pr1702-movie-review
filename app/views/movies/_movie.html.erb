@@ -1,4 +1,11 @@
 <div class="movie" >
-  <div class="movie-poster"><%= link_to image_tag(movie.image), movie %></div>
-  <div class="movie-title"><%= truncate movie.name, length: Settings.movies.name_length %></div>
-</div>
+  <div class="movie-poster" data-toggle="tooltip" data-placement="top" title="<%= "#{t ".genre"}: #{movie.genre.name}, #{t ".year"}: #{movie.release_date.strftime("%Y")}" %>">
+    <%= link_to image_tag(movie.image), movie_path(movie) %>
+  </div>
+  <div class="movie-title"  data-toggle="tooltip" data-placement="top" title="<%= truncate movie.synopsis, length: Settings.movies.synop_short %>">
+    <%= truncate movie.name, length: Settings.movies.name_length %>
+    <p>
+      <span class="slabel" id="badge-review"><%= "#{movie.count_reviews} #{t ".reviews"}" %></span>
+      <span class="slabel" id="badge-rated"><%= "#{movie.avg_ratings} #{t ".star"}" %></span></p>
+  </div>
+</div>  
