@@ -1,6 +1,10 @@
 movies:
-  page: 12
+  limit: 5
+  name_length: 30
+  page: 15
   synopsis_short: 200
+  rating:
+    score: 4.5
 users:
   page: 2
 reivews:

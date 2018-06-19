@@ -148,3 +148,7 @@ li.test {
 .add_watchlist {
   float: right;
 }
+
+.search-form {
+  padding: 3px 5px;
+}

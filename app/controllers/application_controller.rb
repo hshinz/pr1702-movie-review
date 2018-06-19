@@ -3,9 +3,8 @@ class ApplicationController < ActionController::Base
   before_action :search
 
   def search
-    @q = Movie.ransack(params[:q])
+    @search = Movie.ransack(params[:q])
   end
-  before_action :authenticate_user!
 
   def admin?
     current_user && current_user.admin?
@@ -13,7 +12,7 @@ class ApplicationController < ActionController::Base
 
   def admin_only
     unless admin?
-      flash[:alert] = "You dont have authorized access to this action"
+      flash[:alert] = t ".opp"
       redirect_to root_path
     end
   end
