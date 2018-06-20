@@ -24,6 +24,8 @@ en:
       news: "Newsletter"
       recent: "Recent Review"
       social: "Social Media"
+    application:
+      title: "Movie Reviews"
   application:
     admin_only:
       opp: "You dont have authorized access to this action"
@@ -61,6 +63,8 @@ en:
       reviews: "reviews"
       star: "star"
       year: "Year"
+    top:
+      top: "Top Movies"
   reviews:
     create:
       success: "Successfully created review!"
@@ -71,6 +75,8 @@ en:
       yes_button: "YES"
     form_type:
       review: "Add Review"
+    new:
+      back: "Back"
   comments:
     create:
       created: "Successfully created comment!"
@@ -172,6 +178,7 @@ en:
       failed: "Failed!"
   static_page:
     home:
+      home: "Home"
       new_reviews: "New Reviews"
       newest: "Newest"
       see_all: "See all"
