@@ -241,3 +241,11 @@ li.test {
   #badge-rated {
   background-color: darkorange;}
 
+.movie-info {
+  font-size: 13px;
+  list-style: none;
+}
+
+.review-title {
+  display: grid;
+}
