@@ -3,17 +3,19 @@ en:
     header:
       account: "Account"
       browse_movies: "Browse Movies"
+      browse_movies: Browse Movies
+      description: "PR1702 - Team 1 (Giang, Dat)"
       home: "Home"
+      home: Home
       login: "Login"
+      login: Login
       logout: "Logout"
+      logout: Logout
+      manage: Movies Management
       profile: "Profile"
       register: "Register"
-      manage: Movies Management
-      browse_movies: Browse Movies
-      home: Home
-      login: Login
       register: Register
-      logout: Logout
+      title: "Movie Reviews"
     footer:
       about: "About Us"
       copyright: "Copyright 2014 Company name, All rights reserved"
@@ -35,7 +37,7 @@ en:
       rating: "Ratings"
     show:
       home: "Home"
-      movie_review: "Movie Review"
+      browse: "Browse Movies"
       new_review: "Write Review"
       review: "User Reviews"
       submit: "Submit"
@@ -54,6 +56,11 @@ en:
     reviews:
       ask: "Was this review helpful to you?"
       yes_btn: "YES"
+    movie:
+      genre: "Genre"
+      reviews: "reviews"
+      star: "star"
+      year: "Year"
   reviews:
     create:
       success: "Successfully created review!"

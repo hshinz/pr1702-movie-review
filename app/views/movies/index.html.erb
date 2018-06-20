@@ -1,32 +1,20 @@
-<div id="site-content">
-  <main class="main-content">
-    <div class="container">
-      <div class="page">
-        <div class="breadcrumbs">
-          <%= link_to t(".home"), root_path %>
-          <span><%= t ".browse_movies" %></span>
-        </div>
-        <div class="filters">
-          <%= form_tag movies_path, method: "get" do %>
-            <%= select_tag :genre, options_for_select(@genres), prompt: t(".genres") %>
-            <%= select_tag :release_year, options_for_select(@release_years), prompt: t(".years") %>
-            <%= select_tag :user_rating, options_for_select(@ratings), prompt: t(".rating") %>
-            <%= submit_tag t(".filter") %>
-          <% end %>
-        </div>
-        <div class="movie-list">
-          <% @movies.each do |movie| %>
-            <div class="movie">
-              <div class="movie-poster"><%= image_tag movie.image %></div>
-              <div class="movie-title"><%= link_to movie.name, movie %></div>
-              <p><%= movie.synopsis[0..100] %>...</p>
-            </div>
-          <% end %>
-        </div>
-        <div class="pagination">
-          <%= will_paginate @movies %>
-        </div>
-      </div>
-    </div>
-  </main>
+<div class="breadcrumbs">
+  <%= link_to t(".home"), root_path %>
+  <span><%= t ".browse_movies" %></span>
+</div>
+<div class="filters">
+  <%= form_tag movies_path, method: "get" do %>
+    <%= select_tag :genre, options_for_select(@genres), prompt: t(".genres") %>
+    <%= select_tag :release_year, options_for_select(@release_years), prompt: t(".years") %>
+    <%= select_tag :user_rating, options_for_select(@ratings), prompt: t(".rating") %>
+    <%= submit_tag t(".filter") %>
+  <% end %>
+</div>
+<div class="movie-list">
+  <% @movies.each do |movie| %>
+    <%= render partial: "movies/movie", locals: {movie: movie} %>
+  <% end %>
+</div>
+<div class="pagination">
+  <%= will_paginate @movies %>
 </div>

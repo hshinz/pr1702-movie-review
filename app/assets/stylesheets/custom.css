@@ -59,10 +59,6 @@ $gray-medium-light: #eaeaea;
   margin-bottom: 10px;
 }
 
-.search-form {
-  margin-right: 10px;
-}
-
 .error_explanation {
   color: red;
   ul {
@@ -223,3 +219,21 @@ li.test {
 .gravatar {
   float: left;
 }
+
+.slabel {
+  display: inline-block;
+  min-width: 10px;
+  padding: 3px 7px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+  line-height: 1;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-align: center;
+  border-radius: 10px;}
+  #badge-review {
+  background-color: darkgreen;}
+  #badge-rated {
+  background-color: darkorange;}
+

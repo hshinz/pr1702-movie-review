@@ -3,7 +3,7 @@
     <div class="movie-list">
       <div class="head">
         <h2><%= t ".new_reviews" %></h2>
-        <h4><%= link_to t(".see_all"), top_movies_path(type: :top_reviewed), class: "btn btn-warning btn-md" %></h4>
+        <h4><%= link_to t(".see_all"), top_movies_path(type: :top_reviewed) %></h4>
       </div>
         <% @new_reviewes.each do |movie| %>
           <%= render partial: "movies/movie", locals: {movie: movie} %>
@@ -17,7 +17,7 @@
     <div class="movie-list">
       <div class="head">
         <h2><%= t ".top_rated" %></h2>
-        <h4><%= link_to t(".see_all"), top_movies_path(type: :top_rated), class: "btn btn-warning btn-md" %></h4>
+        <h4><%= link_to t(".see_all"), top_movies_path(type: :top_rated) %></h4>
       </div>
         <% @top_rated.each do |movie| %>
           <%= render partial: "movies/movie", locals: {movie: movie} %>
@@ -31,7 +31,7 @@
     <div class="movie-list">
       <div class="head">
         <h2><%= t ".newest" %></h2>
-        <h4><%= link_to t(".see_all"), top_movies_path(type: :top_updated), class: "btn btn-warning btn-md" %></h4>
+        <h4><%= link_to t(".see_all"), top_movies_path(type: :top_updated) %></h4>
       </div>
         <% @newest.each do |movie| %>
           <%= render partial: "movies/movie", locals: {movie: movie} %>
