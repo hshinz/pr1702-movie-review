@@ -28,6 +28,8 @@ en:
       news: "Newsletter"
       recent: "Recent Review"
       social: "Social Media"
+    search:
+      placeholder: "Search movies..."
     application:
       title: "Movie Reviews"
   application:
@@ -240,6 +242,8 @@ en:
       newest: "Newest"
       see_all: "See all"
       top_rated: "Top Rated"
+    search:
+      results: "Search Results"
   like_reviews:
     create:
       success: "Liked success!"
