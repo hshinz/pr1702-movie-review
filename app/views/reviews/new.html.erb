@@ -1,5 +1,7 @@
+<% provide :title, @movie.name %>
+
 <h2><%= @movie.name %></h2>
 
-<%= render 'form_type', review: @review %>
+<%= render "form_type", review: @review %>
 
-<%= link_to 'Back', movie_path(@movie), class: "btn btn-danger" %>
+<%= link_to t(".back"), movie_path(@movie), class: "btn btn-danger" %>
