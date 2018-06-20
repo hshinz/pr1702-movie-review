@@ -1,47 +1,29 @@
-<div class="main-content">
-  <div class="container">
-    <div class="page">
-      <div class="content">
-        <div class="row">
-          <div class="user-profile jumbotron">
-            <div class="avatar">
-              <h3><%= t ".avatar" %></h3>
-            </div>
-            <div class="user-properties">
-              <h4>User: <%= @user.email %></h4>
-              <%= link_to t(".description"), "#" %>
-            </div>
-          </div>
-          <div class="col-md-9">
-            <div class="user-reviews">
-              <% @reviews.each do |review| %>
-                <div class="row well">
-                  <div class="col-sm-3">
-                    <div class="movie-poster img-thumbnail"><%= image_tag review.movie.image %></div>
-                  </div>
-                  <div class="col-sm-8">
-                    <span><%= link_to review.movie.name, review.movie %></span>
-                    <em>(<%= review.movie.release_date.year %>)</em><br>
-                    <div class="star-rating" data-score= <%= review.rating %> ></div>
-                    <p><strong><%= review.title %></strong>
-                    <em><%= review.created_at %></em></p>
-                    <p><%= review.content[0..500] %></p>
-                    <%= link_to t(".more"), review.movie %>
-                  </div>
-                </div>
-              <% end %>
-              <div class="pagination">
-                <%= will_paginate @reviews %>
-              </div>
-            </div>
-          </div>
-        <div class="col-md-3">
-          <h2><%= t ".link" %></h2>
-          <div class="well">
-            <%= link_to t(".bookmark"), "#" %>
-          </div>
-        </div>
+<% provide :title, @user.email %>
+
+<h1><%= t ".profile" %></h1>
+
+<div class="user-profile">
+  <div class="row">
+    <div class="col-sm-6 col-md-12">
+      <%= render "info" %>      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 col-md-12">
+    <h2><%= t ".reviews" %></h2>
+      <div class="user-reviews">
+        <%= render "reviews" %>
       </div>
     </div>
   </div>
+  <% if @user == current_user %>
+    <div class="row">
+      <div class="col-sm-6 col-md-12">
+      <h2><%= t ".bookmarks" %></h2>
+        <div class="user-bookmarks">
+          <%= render "bookmarks" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>

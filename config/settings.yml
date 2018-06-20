@@ -9,6 +9,6 @@ movies:
   ratings_round: 1
 users:
   page: 2
-reivews:
+reviews:
   cont_length: 500
 

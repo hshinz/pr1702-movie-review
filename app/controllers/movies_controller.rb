@@ -19,7 +19,7 @@ class MoviesController < ApplicationController
   def show
     reviews = @movie.reviews
     reviews.blank? ? 0 : @avg_rating = reviews.average(:rating).round(2)
-    @reviews = reviews.sort_reviews
+    @reviews = reviews.sort_reviews.paginate page: params[:page], per_page: Settings.users.page
     @like = LikeReview.new
     @add_watchlist = Watchlist.new
   end

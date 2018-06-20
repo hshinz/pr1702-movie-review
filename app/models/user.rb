@@ -11,6 +11,8 @@ class User < ApplicationRecord
 
   enum role: [:user, :admin]
 
+  scope :watchlists, ->{watchlists.order created_at: :desc}
+
   def has_movie? movie 
     reviews.find_by movie: movie
   end

@@ -18,5 +18,5 @@ Rails.application.routes.draw do
     resources :descriptions
   end
   resources :like_reviews, only: :create
-  resources :watchlists, only: :create
+  resources :watchlists, only: [:create, :destroy]
 end

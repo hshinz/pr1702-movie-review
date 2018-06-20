@@ -1646,8 +1646,10 @@ ul.arrow {
           color: #ffaa3c; }
 
 .pagination {
+  display: inherit;
   clear: both;
-  text-align: center; }
+  text-align: center;
+  margin: 0px; }
   .pagination .page-number {
     display: inline-block;
     width: 40px;
