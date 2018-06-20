@@ -18,7 +18,7 @@
     <% @movies.each do |movie| %>
       <tr>
         <td><%= movie.id %></td>
-        <td><%= image_tag movie.image, id: "admin-image-movie" %></td>
+        <td><%= image_tag movie.image, class: "admin-image-movie" %></td>
         <td><%= movie.name %></td>
         <td><%= movie.trailer %></td>
         <td><%= movie.genre.name %></td>

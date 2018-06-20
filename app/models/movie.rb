@@ -26,4 +26,8 @@ class Movie < ApplicationRecord
   scope :genre, -> (genre_id) {where(genre_id: genre_id).order(created_at: :desc)}
   scope :release_year, -> (year) {(where "YEAR(release_date) = ?", year.to_i).order(created_at: :desc)}
   scope :user_rating, -> (user_rating) {joins(:reviews).where(reviews: {rating: user_rating}).order(created_at: :desc)}
+
+  def count_reviews
+    reviews.count
+  end
 end

@@ -3,31 +3,35 @@
 
 $gray-medium-light: #eaeaea;
 
-#screenshots {
+.screenshots {
   margin-top: 10px;
   margin-bottom: 30px;
   text-align: left;
   position: relative;
 }
-#playTrailer {
+
+.play-trailer {
   position: absolute;
   height: 230px;
   width: 350px;
 }
+
 .devise-form {
   margin-top: 50px;
   margin-left: 200px;
 }
+
 .review-properties {
     font-size: 12px;
     color: #717171;
 }
-#movie-comments {
+
+.movie-comments {
   font-size: 15px;
   line-height: 20px;
 }
 
-#movie-comments .properties em {
+.movie-comments .properties em {
   color: darkgray;
 }
 
@@ -59,7 +63,7 @@ $gray-medium-light: #eaeaea;
   margin-right: 10px;
 }
 
-#error_explanation {
+.error_explanation {
   color: red;
   ul {
     color: red;
@@ -85,11 +89,12 @@ $gray-medium-light: #eaeaea;
 }
 
 /* admin */
-#management {
+.management {
   margin-top: 100px;
   margin-bottom: 100px;
 }
-#admin-image-movie {
+
+.admin-image-movie {
   border: 1px solid $gray;
   float: left;
   margin: 5px;
@@ -151,4 +156,70 @@ li.test {
 
 .search-form {
   padding: 3px 5px;
+}
+
+.user-reviews {
+  background-color: #f1f1f1;
+  padding: 20px 0;
+  border-radius: 6px;
+}
+
+.user-bookmarks {
+  background-color: #f1f1f1;
+  padding: 0.01em 16px;
+  margin: 20px 0;
+  border-radius: 6px;
+}
+
+.wire-review-btn {
+  margin: 20px 0;
+  text-decoration: none;
+}
+
+.media {
+  background-color: #fff;
+  padding: 10px 20px;
+  margin: 20px;  
+}
+
+.media-left {
+  display: inline-block;
+  float: left;
+  margin-right: 10px;
+}
+
+.media-object {
+  width: 50px;
+}
+
+.media-user {
+  width: 100px;
+}
+
+.media-movie {
+  width: 150px;
+}
+
+.media-bookmark {
+  width: 100px;
+}
+
+.star-rating {
+  display: inline-block;
+}
+
+.inter-actions {
+  display: inline;
+}
+
+.interactive-review {
+  display: inline;
+}
+
+.inter-label {
+  margin-top: 10px;
+}
+
+.gravatar {
+  float: left;
 }

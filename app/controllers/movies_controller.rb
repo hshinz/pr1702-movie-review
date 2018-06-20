@@ -48,5 +48,4 @@ private
   def load_release_year
     @release_years = Movie.order(:release_date).load_year
   end
-
 end
