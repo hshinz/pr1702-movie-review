@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root "static_page#home"
+  
+  get "search", to: "static_page#search"
 
   devise_for :users
   resources :users
