@@ -1,13 +1,12 @@
 class ReviewsController < ApplicationController
-  before_action :authenticate_user!
-  before_action :set_movie
+  before_action :authenticate_user!, :load_movie
 
   def new
     @review = Review.new
   end
 
   def create
-    @review = Review.new review_params
+    @review = current_user.reviews.build review_params
     if @review.save
       flash[:success] = t ".success"
       redirect_to @movie
@@ -19,11 +18,15 @@ class ReviewsController < ApplicationController
 
   private
 
-  def set_movie
+  def load_movie
     @movie = Movie.find params[:movie_id]
+    if @movie.nil?
+      flash[:danger] = t ".not_found"
+      redirect_to root_url
+    end
   end
 
   def review_params
-    params.require(:review).permit :user_id, :movie_id, :title, :content, :rating
+    params.require(:review).permit :title, :content, :rating, :movie_id
   end
 end
