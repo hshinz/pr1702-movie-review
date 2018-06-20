@@ -27,6 +27,7 @@ gem "turbolinks", "~> 5"
 gem "uglifier", ">= 1.3.0"
 gem "will_paginate", "3.1.6"
 gem 'rails_admin'
+gem 'activity_notification'
 
 # Use Capistrano for deployment
 # gem "capistrano-rails", group: :development

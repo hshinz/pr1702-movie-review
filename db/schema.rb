@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180620123949) do
+ActiveRecord::Schema.define(version: 20180622111316) do
 
   create_table "comments", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text "content"
@@ -63,6 +63,28 @@ ActiveRecord::Schema.define(version: 20180620123949) do
     t.time "length"
   end
 
+  create_table "notifications", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "target_type", null: false
+    t.integer "target_id", null: false
+    t.string "notifiable_type", null: false
+    t.integer "notifiable_id", null: false
+    t.string "key", null: false
+    t.string "group_type"
+    t.integer "group_id"
+    t.integer "group_owner_id"
+    t.string "notifier_type"
+    t.integer "notifier_id"
+    t.text "parameters"
+    t.datetime "opened_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["group_owner_id"], name: "index_notifications_on_group_owner_id"
+    t.index ["group_type", "group_id"], name: "index_notifications_on_group_type_and_group_id"
+    t.index ["notifiable_type", "notifiable_id"], name: "index_notifications_on_notifiable_type_and_notifiable_id"
+    t.index ["notifier_type", "notifier_id"], name: "index_notifications_on_notifier_type_and_notifier_id"
+    t.index ["target_type", "target_id"], name: "index_notifications_on_target_type_and_target_id"
+  end
+
   create_table "relationships", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "follower_id"
     t.integer "followed_id"
@@ -83,12 +105,34 @@ ActiveRecord::Schema.define(version: 20180620123949) do
     t.integer "rating"
   end
 
+  create_table "subscriptions", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "target_type", null: false
+    t.integer "target_id", null: false
+    t.string "key", null: false
+    t.boolean "subscribing", default: true, null: false
+    t.boolean "subscribing_to_email", default: true, null: false
+    t.datetime "subscribed_at"
+    t.datetime "unsubscribed_at"
+    t.datetime "subscribed_to_email_at"
+    t.datetime "unsubscribed_to_email_at"
+    t.text "optional_targets"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["key"], name: "index_subscriptions_on_key"
+    t.index ["target_type", "target_id", "key"], name: "index_subscriptions_on_target_type_and_target_id_and_key", unique: true
+    t.index ["target_type", "target_id"], name: "index_subscriptions_on_target_type_and_target_id"
+  end
+
   create_table "users", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "role"

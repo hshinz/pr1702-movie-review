@@ -10,16 +10,16 @@ class User < ApplicationRecord
     foreign_key: :follower_id, dependent: :destroy
   has_many :passive_relationships, class_name: Relationship.name,
     foreign_key: :followed_id, dependent: :destroy
-
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, :confirmable
   enum role: [:user, :admin]
   after_initialize :set_default_role
 
   scope :watchlists, ->{watchlists.order created_at: :desc}
+  acts_as_target
 
   def has_movie? movie
     reviews.find_by movie: movie

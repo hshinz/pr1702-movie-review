@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root "static_page#home"
-  
+
   get "search", to: "static_page#search"
 
   devise_for :users
@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     end
     resources :reviews
   end
-  
+
   namespace :admin do
     resources :users
     resources :movies
@@ -31,4 +31,6 @@ Rails.application.routes.draw do
   end
   resources :like_reviews, only: :create
   resources :watchlists, only: [:create, :destroy]
+  notify_to :users
+
 end

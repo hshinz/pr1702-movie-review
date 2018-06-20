@@ -38,6 +38,10 @@ GEM
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    activity_notification (1.5.0)
+      i18n (>= 0.5.0)
+      jquery-rails (>= 3.1.1)
+      railties (>= 4.2.0, < 5.3)
     arel (8.0.0)
     autoprefixer-rails (8.6.0)
       execjs
@@ -299,6 +303,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activity_notification
   bootstrap-sass (~> 3.3)
   byebug
   cancancan (~> 2.2)

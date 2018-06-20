@@ -119,3 +119,4 @@ Movie.create!(name: "Toy Story 3",
 # Movie.update([2,3],
   # [{length: "01:00:00"},{length: "02:21:22"}] )
 # Movie.update([1,2],[{trailer: "_EhiLLOhVis"}, {trailer: "82onGmBx9ZM"}])
+User.create!(email: "admin@example.org", password: "123456", role: "admin", confirmed_at: Time.now)

@@ -32,11 +32,11 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.default_url_options = {host: ""}
   config.action_mailer.smtp_settings = {
-    address: "",
+    address: ENV["address"],
     port: 587,
-    user_name: "",
-    password: "",
-    domain: "",
+    user_name: ENV["user_name"],
+    password: ENV["password"],
+    domain: ENV["domain"],
     enable_starttls_auto: true
   }
 
