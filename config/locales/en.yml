@@ -113,13 +113,24 @@ en:
         change_password: "Change your password"
   users:
     show:
-      avatar: "Avatar"
-      bookmark: "Your Bookmarks"
-      comments: "Your Comments"
-      description: "Edit Description"
-      link: "Quick links"
-      more: "See more"
-      reviews: "Your Reviews"
+      bookmarks: "Your bookmarks"
+      profile: "Profile"
+      reviews: "Reviews"
+    info: 
+      account: "Account created at"
+      description: "Description"
+    reviews:
+      liked: "Liked"
+      posted: "Posted"
+      see_more: "Seel more"
+    bookmarks:
+      action: "Actions"
+      dated: "Dated"
+      movie: "Movie"
+      synopsis: "Synopsis"
+      remove: "Remove"
+      delete: "delete"
+      sure: "Are you sure?"
   admin:
     movies:
       index:
@@ -175,6 +186,9 @@ en:
   watchlists:
     create:
       added: "Added to watchlist"
+      failed: "Failed!"
+    destroy:
+      remove: "Removed from watchlist"
       failed: "Failed!"
   static_page:
     home:

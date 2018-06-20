@@ -12,6 +12,16 @@ class WatchlistsController < ApplicationController
     end
   end
 
+  def destroy
+    @watchlist = Watchlist.find_by id: params[:id]
+    if @watchlist.nil?
+      redirect_to root_url
+    else
+      @watchlist.destroy ? flash[:success] = t(".remove") : flash[:danger] = t(".failed")
+      redirect_to @watchlist.user
+    end
+  end
+
   private
 
   def watchlist_params
