@@ -1,0 +1,34 @@
+<div class="row">
+  <div class="col-sm-6 col-md-12">
+    <ul class="nav nav-tabs">
+      <li class="active">
+        <%= link_to "#reviews", data: {toggle: :tab} do %>
+          <h4><%= "#{t ".reviews"} (#{@user.reviews.count})" %></h4>
+        <% end %>
+      </li>
+      <% if @user == current_user %>
+        <li>
+          <%= link_to "#bookmarks", data: {toggle: :tab} do %>
+            <h4><%= "#{t ".bookmarks"} (#{@user.watchlists.count})" %></h4>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+
+    <div class="tab-content">
+      <div id="reviews" class="tab-pane fade in active">
+        <div class="user-reviews">
+          <%= render "reviews" %>
+        </div>
+      </div>
+
+      <% if @user == current_user %>
+        <div id="bookmarks" class="tab-pane fade">
+          <div class="user-bookmarks">
+            <%= render "bookmarks" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

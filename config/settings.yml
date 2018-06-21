@@ -11,4 +11,6 @@ users:
   page: 2
 reviews:
   cont_length: 500
-
+gravatar:
+  size: 50
+  default_size: 80

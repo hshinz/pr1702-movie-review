@@ -1,0 +1,31 @@
+.user-profile {
+  background-color: #f1f1f1;
+  border-radius: 6px;
+  margin-bottom: 30px;
+  padding: 20px 0;
+}
+
+.user-followers {
+  margin-top: 10px;
+}
+
+.user-following {
+  margin-top: 10px;
+}
+
+.user-reviews {
+  background-color: #f1f1f1;
+  border-radius: 6px;
+  margin: 20px 0;
+  padding: 20px 0;
+}
+
+.user-bookmarks {
+  background-color: #f1f1f1;
+  border-radius: 6px;
+  margin: 20px 0;
+  padding: 20px 0;
+}
+.follow {
+  margin-top: 50px;
+}

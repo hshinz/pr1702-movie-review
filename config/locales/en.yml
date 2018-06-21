@@ -44,9 +44,10 @@ en:
       years: "Years"
       rating: "Ratings"
     show:
-      home: "Home"
       browse: "Browse Movies"
+      home: "Home"
       new_review: "Write Review"
+      not_found: "Not found movie!"
       review: "User Reviews"
       submit: "Submit"
     properties:
@@ -75,7 +76,7 @@ en:
     create:
       success: "Successfully created review!"
       try_again: "Oop! Try again!"
-    load_movie:
+    new:
       not_found: "Not found movie!"
     reviews:
       review_by: "Review by"
@@ -119,18 +120,17 @@ en:
         send: "Send me reset password instructions"
       edit:
         change_password: "Change your password"
+  relationships:
+    create:
+      followers: "Followers"
+      not_found: "Not found user!"
+    destroy:
+      followers: "Followers"
+      not_found: "Not found user!"
   users:
-    show:
-      bookmarks: "Your bookmarks"
-      profile: "Profile"
+    activity:
+      bookmarks: "Bookmarks"
       reviews: "Reviews"
-    info:
-      account: "Account created at"
-      description: "Description"
-    reviews:
-      liked: "Liked"
-      posted: "Posted"
-      see_more: "Seel more"
     bookmarks:
       action: "Actions"
       dated: "Dated"
@@ -139,6 +139,24 @@ en:
       remove: "Remove"
       delete: "delete"
       sure: "Are you sure?"
+    follow:
+      follow: "Follow"
+    info:
+      account: "Account created at"
+      description: "Description"
+    profile:
+      followers: "Followers"
+      following: "Following"
+    unfollow:
+      unfollow: "Unfollow"
+    reviews:
+      liked: "Liked"
+      posted: "Posted"
+      see_more: "Seel more"
+    show:
+      profile: "Profile"
+      activity: "Activity"
+      not_found: "Not found user!"
   admin:
     movies:
       index:
@@ -248,4 +266,4 @@ en:
     create:
       success: "Liked success!"
       failed: "Failed"
-
+      

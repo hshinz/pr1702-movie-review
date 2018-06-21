@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-  before_action :set_movie
+  before_action :load_movie, only: :show
   before_action :load_genre, :load_release_year, :load_ratings, only: :index
   
   def index
@@ -33,8 +33,11 @@ private
     params.permit :genre, :release_year, :user_rating
   end
 
-  def set_movie
+  def load_movie
     @movie = Movie.find_by id: params[:id]
+    return if @movie
+    flash[:danger] = t ".not_found"
+    redirect_to root_url
   end
 
   def load_ratings

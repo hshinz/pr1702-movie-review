@@ -1,0 +1,39 @@
+<div class="row">
+  <aside class="col-sm-4">
+    <%= render "info" %>
+  </aside>
+  <div class="col-sm-8">
+    <ul class="nav nav-pills">
+      <li class="active">
+        <%= link_to "#followers-menu", data: {toggle: :pill}, id: "followers" do %>
+          <%= "#{t ".followers"} (#{@user.followers.count})" %>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to "#following-menu", data: {toggle: :pill} do %>
+          <%= "#{t ".following"} (#{@user.following.count})" %>
+        <% end %>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div id="followers-menu" class="tab-pane fade in active">
+        <div class="user-followers">
+          <% if @user.followers.any? %>
+            <% @user.followers.each do |user| %>
+              <%= link_to gravatar_for(user, size: Settings.gravatar.size), user_path(user) %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      <div id="following-menu" class="tab-pane fade">
+        <div class="user-following">
+          <% if @user.following.any? %>
+            <% @user.following.each do |user| %>
+              <%= link_to gravatar_for(user, size: Settings.gravatar.size), user_path(user) %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

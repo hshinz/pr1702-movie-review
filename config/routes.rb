@@ -5,13 +5,22 @@ Rails.application.routes.draw do
   get "search", to: "static_page#search"
 
   devise_for :users
-  resources :users
+
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
+
+  resources :relationships, only: [:create, :destroy]
+
   resources :movies do
     collection do
       get :top
     end
     resources :reviews
   end
+  
   namespace :admin do
     resources :users
     resources :movies
