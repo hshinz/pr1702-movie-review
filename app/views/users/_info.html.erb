@@ -1,10 +1,15 @@
 <div class="media">
   <div class="media-left">
-    <%= gravatar_for current_user %>
+    <%= gravatar_for @user %>
   </div>
   <div class="media-body">
     <h4 class="media-heading"><%= @user.email %><br>
     <small><i><%= t ".account" %> <%= (@user.created_at).strftime("%B %e, %Y") %></i></small></h4>
-    <%= link_to t(".description") %>
+    <%= link_to t(".description") %><br>
+  </div>
+  <div class="follow">
+    <% if user_signed_in? %>
+      <%= render "follow_form" %>
+    <% end %>
   </div>
 </div>

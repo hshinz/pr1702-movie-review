@@ -19,11 +19,10 @@ class ReviewsController < ApplicationController
   private
 
   def load_movie
-    @movie = Movie.find params[:movie_id]
-    if @movie.nil?
-      flash[:danger] = t ".not_found"
-      redirect_to root_url
-    end
+    @movie = Movie.find_by id: params[:movie_id]
+    return if @movie
+    flash[:danger] = t ".not_found"
+    redirect_to root_url
   end
 
   def review_params
